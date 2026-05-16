@@ -283,3 +283,7 @@ export function getBooksByCategory(category: string): Book[] {
 export function getFeaturedBooks(): Book[] {
   return books.filter((b) => b.featured);
 }
+
+export function getAllSlugs(): string[] {
+  return books.map((b) => b.slug);
+}

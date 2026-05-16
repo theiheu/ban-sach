@@ -49,16 +49,11 @@ export default function CheckoutPage() {
     };
 
     try {
-      const res = await fetch('/api/order', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(orderPayload),
-      });
+      // Mock gửi đơn (khi có Google Sheets sẽ thay bằng API call qua Cloudflare Worker)
+      console.log('[ORDER]', orderPayload);
+      const success = true;
 
-      const data = await res.json();
-
-      if (data.success) {
-        // Lưu orderId vào sessionStorage để trang cảm ơn hiển thị
+      if (success) {
         sessionStorage.setItem('lastOrderId', orderId);
         clearCart();
         router.push('/dat-hang/thanh-cong');
