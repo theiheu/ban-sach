@@ -9,6 +9,7 @@ export default function ThankYouPage() {
 
   useEffect(() => {
     const id = sessionStorage.getItem('lastOrderId');
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     if (id) setOrderId(id);
   }, []);
 

@@ -43,7 +43,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   // Hydrate từ localStorage sau mount
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setItems(loadCart());
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setHydrated(true);
   }, []);
 
